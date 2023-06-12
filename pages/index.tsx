@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import AddTask from './components/AddTask';
 
 export default function Home() {
   return (
@@ -9,8 +10,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1 className="text-center underline">NextJS 13</h1>
+
+      <main className='max-w-4xl mx-auto mt-4'>
+        <div className="text-center my-5 flex flex-col gap-4">
+          <h1 className="text-2xl font-bold">Todo App</h1>
+          <AddTask />
+        </div>
       </main>
     </>
   )
