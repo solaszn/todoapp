@@ -1,7 +1,11 @@
+import { getAllTodos } from '@/api';
 import Head from 'next/head';
 import AddTask from './components/AddTask';
+import TodoList from './components/TodoList';
 
-export default function Home() {
+export default async function Home() {
+  const tasks = await getAllTodos();
+  console.log(tasks);
   return (
     <>
       <Head>
@@ -11,11 +15,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='max-w-4xl mx-auto mt-4'>
+      <main className='max-w-4xl mx-auto mt-8'>
         <div className="text-center my-5 flex flex-col gap-4">
-          <h1 className="text-2xl font-bold">Todo App</h1>
+          <h1 className="text-2xl font-bold">My Todo App</h1>
           <AddTask />
         </div>
+        <TodoList />
       </main>
     </>
   )
